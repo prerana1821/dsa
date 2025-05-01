@@ -349,6 +349,7 @@ void explainUnorderedSet() {
 // map is a data structure that stores key value pairs in sorted order
 // map is implemented using balanced BST
 // map - everything is in log(n) time complexity
+// keys are unique
 void explainMap() {
   map<int, int> mpp;
   mpp[1] = 2;
@@ -365,6 +366,107 @@ void explainMap() {
   cout << endl;
   auto it = mpp.find(3);
   cout << it->second;
+
+  map<int, pair<int, int>> mpp1;
+  mpp1[1] = {2, 3};
+  mpp1.emplace(2, make_pair(3, 4));
+  mpp1.insert({3, {4, 5}});
+  for (auto it : mpp1) {
+    cout << it.first << " " << it.second.first << " " << it.second.second
+         << endl;
+  }
+  auto it1 = mpp1.find(2);
+  cout << it1->second.first << " " << it1->second.second;
+  cout << endl;
+
+  auto it2 = mpp1.find(2);
+  mpp1.erase(it2);
+  cout << it2->second.first << " " << it2->second.second;
+  cout << endl;
+
+  auto it3 = mpp1.find(1);
+  auto it4 = mpp1.find(3);
+  mpp1.erase(it3, it4);
+  cout << it3->second.first << " " << it3->second.second;
+  cout << endl;
+
+  // lower bound and upper bound work in the same way as set and multiset
+  // count works in the same way as set and multiset
+  // size works in the same way as set and multiset
+  // empty works in the same way as set and multiset
+}
+
+// multimap is a data structure that stores key value pairs in sorted order
+// multimap is implemented using balanced BST
+// multimap - everything is in log(n) time complexity
+// keys are not unique - duplicate keys but in sorted order
+void explainMultimap() {
+  multimap<int, int> mpp;
+  mpp.insert({1, 2});
+  mpp.insert({1, 3});
+  mpp.insert({1, 4});
+}
+
+// unordered map is a data structure that stores key value pairs in unsorted
+// unordered map is implemented using hash table
+// unordered map - everything is in O(1) time complexity
+void explainUnorderedMap() {
+  unordered_map<int, int> mpp;
+  mpp[1] = 2;
+  mpp.emplace(2, 3);
+  mpp.insert({3, 4});
+  for (auto it : mpp) {
+    cout << it.first << " " << it.second << endl;
+  }
+}
+
+bool comp(pair<int, int> p1, pair<int, int> p2) {
+  if (p1.second < p2.second)
+    return true;
+  if (p1.second > p2.second)
+    return true;
+  if (p1.first > p2.first) {
+    return true;
+  }
+  return false;
+}
+
+void explainExtra() {
+
+  // sort(a, a+n);
+  // sort(v.begin(), v.end());
+  // sort(a+2, a+4);
+  // sort(a, a+n, greater<int>);
+  // sort(v.begin(), v.end(), greater<int>);
+
+  pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
+  // sort it according to second element
+  // if second element is same,
+  // then sort it according to first element but in descending order
+
+  // sort(a, a+n, comp);
+  // {4, 1}, {1, 2}, {2, 1}
+
+  int num = 7;
+  int cnt = __builtin_popcount(num);
+  cout << cnt;
+  // 3
+
+  long long num1 = 165786578687;
+  int cnt1 = __builtin_popcountll(num1);
+  cout << cnt1;
+
+  string s = "123";
+  sort(s.begin(), s.end());
+  do {
+    cout << s << endl;
+  } while (next_permutation(s.begin(), s.end()));
+  // 123
+
+  // max element
+  // int maxi = *max_element(a, a + n);
+  // min element
+  // int mini = *min_element(a, a + n);
 }
 
 int main() {
@@ -394,6 +496,10 @@ int main() {
   explainUnorderedSet();
   cout << endl;
   explainMap();
+  cout << endl;
+  explainMultimap();
+  cout << endl;
+  explainUnorderedMap();
   cout << endl;
 
   return 0;
