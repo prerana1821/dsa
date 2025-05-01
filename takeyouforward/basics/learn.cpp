@@ -310,7 +310,8 @@ int main() {
 
   doSomethingWArr(arr);
   cout << "Value inside int main: " << arr[0] << endl;
-  // arrays will always go with reference but apart from arrays everthing else will be pass by value such as vectors, strings, etc.
+  // arrays will always go with pass by reference but apart from arrays
+  // everthing else will be pass by value such as vectors, strings, etc.
 
   return 0;
 }
