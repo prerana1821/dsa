@@ -33,8 +33,8 @@ void removeDuplicatesBrute(int arr[], int n) {
 }
 
 // optimal approach
-// use two pointers - one for the current element and one for the next unique
-// element time complexity - O(n) space complexity - O(1)
+// use two pointers - one for the current element and one for the next unique element
+// time complexity - O(n) space complexity - O(1)
 
 void removeDuplicatesOptimal(int arr[], int n) {
   int i = 0;

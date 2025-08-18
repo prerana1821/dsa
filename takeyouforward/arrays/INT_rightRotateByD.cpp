@@ -30,10 +30,13 @@ void rightRotateByDBrute(int arr[], int n, int d) {
 
 // Helper reverse function
 void reverse(int arr[], int start, int end) {
+  // reverse array from start to end
   while (start < end) {
+    // swap elements
     int temp = arr[start];
     arr[start] = arr[end];
     arr[end] = temp;
+    // move pointers
     start++;
     end--;
   }

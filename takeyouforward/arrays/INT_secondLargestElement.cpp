@@ -51,9 +51,13 @@ int secondLargestElementOptimal(int arr[], int n) {
   int secondLargest = -1;
 
   for (int i = 1; i < n; i++) {
+    // if the current element is greater than the largest element 
+    // then update the second largest element and the largest element
     if (arr[i] > largest) {
       secondLargest = largest;
       largest = arr[i];
+      // if the current element is less than the largest element and is
+      // greater than the second largest element then update the second largest
     } else if(arr[i] < largest && arr[i] > secondLargest){
       secondLargest = arr[i];
     }

@@ -7,9 +7,12 @@ int secondSmallestElement(int arr[], int n) {
   int secondSmallest = INT_MAX;
 
   for (int i = 1; i < n; i++) {
+    // if the current element is less than the smallest element
     if (arr[i] < smallest) {
       secondSmallest = smallest;
       smallest = arr[i];
+      // if the current element is not equal to the smallest element and is
+      // greater than the second smallest element then update the second
     } else if (arr[i] != smallest && arr[i] < secondSmallest) {
       secondSmallest = arr[i];
     }
