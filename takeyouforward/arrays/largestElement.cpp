@@ -6,6 +6,9 @@ using namespace std;
 // element in array is 6 Input: nums = [3, 3, 0, 99, -40] Output: 99
 // Explanation: The largest element in array is 99
 
+// take the first element as the largest and compare it with the rest of the
+// elements
+
 void largestElement(int arr[], int n) {
   int largest = arr[0];
 

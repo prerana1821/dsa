@@ -27,6 +27,10 @@ using namespace std;
 // what is the extra space used in the algorithm?
 // O(1)
 
+// take the first element and store it in a variable
+// shift all the elements to the left by one
+// place the first element at the last index
+
 void leftRotateByOne(int arr[], int n) {
   int temp = arr[0];
   for (int i = 1; i < n; i++) {

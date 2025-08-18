@@ -8,6 +8,10 @@ using namespace std;
 // : false Explanation : For i == 2 it does not hold nums[i] <= nums[i+1], hence
 // it is not sorted and we return false.
 
+// if current element is greater than previous element, then it is sorted
+// time complexity - O(n)
+// space complexity - O(1)
+
 void isSorted(int arr[], int n) {
   for (int i = 1; i < n; i++) {
     if (arr[i] >= arr[i - 1]) {

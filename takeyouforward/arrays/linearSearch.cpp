@@ -9,6 +9,10 @@ using namespace std;
 // Output: -1
 // Explanation: The value 6 does not occur in the array, hence output is -1
 
+// check if the current element is equal to the target and return the index
+// time complexity - O(n)
+// space complexity - O(1)
+
 int linearSearch(int arr[], int n, int target) {
   for (int i = 0; i < n; i++) {
     if (arr[i] == target) {
